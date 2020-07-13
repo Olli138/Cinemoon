@@ -1,0 +1,24 @@
+<div class="landing-container">
+
+    <div class="bg-container">
+        <div class="bg"></div>
+        <div class="gradient"></div>
+        <div class="overlay"></div>
+        <div class="movie-data">
+            <div class="movie-data-container mat-elevation-z0" *ngIf="landingMovie !== undefined">
+                <mat-card class="mat-elevation-z0">
+                    <mat-card-title>{{ landingMovie.title}}</mat-card-title>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="movie-overview">{{ landingMovie.overview }}</mat-card-content>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="release-date">Released: {{landingMovie.release_date}}</mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary"
+                            routerLink="detailview/movie-detail/299534">Make Reservation</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+</div>

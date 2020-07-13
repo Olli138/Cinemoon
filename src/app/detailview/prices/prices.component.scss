@@ -1,0 +1,22 @@
+.prices-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+mat-table{
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+mat-header-cell{
+    font-size: 1.3rem;
+}
+
+@media(max-width: 1200px){
+    h1{
+        margin-left: 10px;
+    }
+    mat-table{
+        margin: 0 10px;
+    }
+}

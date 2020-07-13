@@ -1,0 +1,79 @@
+@import '../../../colors';
+
+mat-divider{
+    margin-top: 20px;
+}
+
+.footer-container{
+    position: relative;
+    height: 200px;
+    background: $color-bg;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 100%;
+
+}
+
+.footer{
+    background: none;
+}
+
+.text-section{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.contact{
+    p{
+        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
+    }
+    color: lightgrey;
+}
+
+.tmdb-logo{
+    width: 200px;
+    padding-right: 10px;
+}
+
+@media (max-width: 1200px){
+    .tmdb-logo{
+    width: 150px;
+    }
+}
+
+@media (max-width: 400px){
+    .footer-container{
+        height: auto;
+        max-width: 100vw;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: auto;
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-section{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        
+        & .tmdb-logo{
+        width: 100px;
+    }
+    }
+}

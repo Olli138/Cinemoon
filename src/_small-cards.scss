@@ -1,0 +1,80 @@
+@import 'colors';
+
+.small-container{
+    padding: 30px 0px;
+    background: $color-bg;
+}
+
+h1{
+    padding: 0 10px;
+    margin: 0;
+}
+
+.small-card-container{
+    padding: 30px 0px 0 0;
+    background: $color-bg;
+    display: flex;
+}
+
+.small-card{
+    max-width: 150px;
+    background: none;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: 400ms ease-out;
+    outline: none;
+
+    &:hover{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.small-card-hover{
+    background: black;
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.small-card-img{
+    width: 100%;
+    margin: 0;
+}
+
+mat-card-title{
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+button{
+    margin-left: 20px;
+}
+
+.genreList{
+    display: inline-block;
+}
+
+@media (max-width: 600px){
+    .small-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .small-card-container{
+        flex-direction: column;
+        align-items: center;
+        max-width: 100vw;
+        padding: 10px 0;
+    }
+
+    mat-card{
+        min-width: 60vw;
+    }
+
+    button{
+        margin: 0 auto;
+    }
+}

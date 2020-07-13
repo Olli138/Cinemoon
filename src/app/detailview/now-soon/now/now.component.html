@@ -1,0 +1,31 @@
+<div class="big-container" *ngIf="moviesNowContainer">
+    <div class="big-card-container" *ngFor="let movie of moviesNowContainer">
+        <mat-card class="big-card">
+            <div class="big-card-img">
+                <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}"
+                    alt="Poster">
+            </div>
+            <div class="big-card-text">
+                <mat-card-title>
+                    {{movie.title}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <div class="genreList"
+                        *ngFor="let genre of movie.genres; let i = index; let first=first; let last=last">
+                        {{genre.name}}
+                        <span *ngIf="!last"> /&nbsp;</span>
+                    </div>
+                </mat-card-subtitle>
+                <p class="movie-overview">{{ movie.overview }}</p>
+                <p>Released: {{movie.release_date}}</p>
+                <mat-card-actions>
+                    <button mat-raised-button
+                        color="primary"
+                        [routerLink]="['/detailview/movie-detail', movie.id]">
+                        Make a reservation
+                    </button>
+                </mat-card-actions>
+            </div>
+        </mat-card>
+    </div>
+</div>

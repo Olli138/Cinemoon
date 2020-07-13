@@ -1,0 +1,81 @@
+<div class="movie-detail-container" *ngIf="modeNow ? selectedMovie && timeData : selectedMovie">
+    <div class="backdrop-container">
+        <div class="backdrop">
+            <img src="https://image.tmdb.org/t/p/original{{selectedMovie.backdrop_path}}" alt="">
+        </div>
+        <div class="gradient"></div>
+    </div>
+    <div class="movie-info-container">
+        <div class="title">
+            <h1>{{selectedMovie.title}}</h1>
+        </div>
+
+        <div class="movie-info">
+            <div class="poster">
+                <img src="https://image.tmdb.org/t/p/original{{selectedMovie.poster_path}}"
+                    alt="Poster">
+            </div>
+            <div class="movie-info-detailed">
+                <div class="icons">
+                    <button mat-raised-button color="primary" (click)="openDialog()"><i
+                            class="far fa-play-circle"></i>
+                        Preview</button>
+
+                </div>
+                <div class="movie-general-info">
+                    <ul>
+                        <li><i class="fas fa-grip-horizontal"></i>
+                            <div class="genreList"
+                                *ngFor="let genre of selectedMovie.genres; let last=last">
+                                {{genre.name}}
+                                <span *ngIf="!last">,&nbsp;</span>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-globe-europe"></i> Release-Date: {{selectedMovie.release_date}}</li>
+                        <li><i class="far fa-clock"></i> Runtime: {{selectedMovie.runtime}}</li>
+                        <li><i class="far fa-thumbs-up"></i>Rating: {{selectedMovie.vote_average}}</li>
+                    </ul>
+                </div>
+                <div class="movie-overview">
+                    {{selectedMovie.overview}}
+                </div>
+
+
+                <div class="booking-info" *ngIf="modeNow">
+                    <mat-form-field>
+                        <mat-label>Choose a Date</mat-label>
+                        <mat-select #dateForm [(ngModel)]="dayId">
+                            <mat-option *ngFor="let date of dates.days; let i = index" [value]="i.toString()">
+                                {{date.value}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div *ngIf="dayId && modeNow">
+                    <mat-button-toggle-group
+                        name="fontStyle"
+                        aria-label="Font Style"
+                        *ngIf="dayId!==undefined"
+                        [(ngModel)]="timeId">
+                        <mat-button-toggle
+                            color="accent"
+                            *ngFor="let time of timeData[+dayId].times; let j = index"
+                            [value]="j.toString()">
+                            {{ time.time }}
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+
+                    <div class="reservation-button">
+                        <button
+                            mat-raised-button
+                            color="primary"
+                            [disabled]="!dayId || !timeId"
+                            [routerLink]="['/', 'booking', 'seats', movieId, dayId, timeId]">
+                            Choose Seats
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

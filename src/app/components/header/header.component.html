@@ -1,0 +1,27 @@
+<mat-toolbar class="navbar">
+    <div><a class="cinemoon" routerLink="/">Cinemoon</a></div>
+    <div class="big-menu">
+        <a mat-button routerLink="/detailview/now-soon/now">Now</a>
+        <a mat-button routerLink="/detailview/now-soon/soon">Soon</a>
+        <a mat-button routerLink="/detailview/prices">Prices</a>
+    </div>
+
+
+    <div class="icon-menu">
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #appMenu="matMenu" backdropClass="menu">
+            <button mat-menu-item routerLink="/detailview/now-soon/now">
+                <span>Now Showing</span>
+            </button>
+            <button mat-menu-item routerLink="/detailview/now-soon/soon">
+                <span>Soon Showing</span>
+            </button>
+            <button mat-menu-item routerLink="/detailview/prices">
+                <span>Prices</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
+<mat-divider></mat-divider>

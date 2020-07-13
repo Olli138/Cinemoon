@@ -1,0 +1,47 @@
+@import '../../../small-cards';
+@import '../../../colors';
+
+.soon-small-container{
+    padding: 30px 0px;
+    background: $color-bg;
+}
+
+@media (max-width: 1200px){
+    .small-card-container{
+        mat-card:nth-child(2){
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .small-card-container{
+        mat-card:last-child{
+            display: none;
+        }
+}
+}
+
+@media (max-width: 800px){
+    .small-card-container{
+        mat-card:nth-child(6){
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .small-card-container{
+        mat-card:nth-child(5){
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .small-card-container{
+        mat-card:nth-child(4){
+            display: none;
+        }
+    }
+}

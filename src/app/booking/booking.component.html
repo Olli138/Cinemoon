@@ -1,0 +1,26 @@
+<div class="booking-container">
+    <h1>Booking</h1>
+    <mat-horizontal-stepper labelPosition="bottom" linear>
+        <mat-step [completed]="seatsBoolean">
+            <ng-template matStepLabel>Seats</ng-template>
+            <app-seats (stepCompleted)="setSeatsBoolean($event)"></app-seats>
+            <div class="previous-next-button-container">
+                <button mat-stroked-button matStepperPrevious disabled type="button">Back</button>
+                <button mat-stroked-button matStepperNext [disabled]="!seatsBoolean" type="button">Next</button>
+            </div>
+        </mat-step>
+        <mat-step [completed]="personalBoolean">
+            <ng-template matStepLabel>Data</ng-template>
+            <app-personal-data (personalStepCompleted)="setPersonalBoolean($event)"></app-personal-data>
+        </mat-step>
+        <mat-step [completed]="false">
+            <ng-template matStepLabel>Confirm</ng-template>
+            <app-confirm></app-confirm>
+
+            <div class="previous-next-button-container">
+                <button mat-stroked-button matStepperPrevious type="button">Back</button>
+                <button mat-stroked-button matStepperNext type="button" (click)="onBuy()" routerLink="/">Buy</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

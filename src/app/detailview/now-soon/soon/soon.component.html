@@ -1,0 +1,28 @@
+<div class="big-container" *ngIf="moviesSoonContainer">
+    <div class="big-card-container" *ngFor="let movie of moviesSoonContainer">
+        <mat-card class="big-card">
+            <div class="big-card-img">
+                <img src="http://image.tmdb.org/t/p/original/{{movie.poster_path}}"
+                    alt="Poster">
+            </div>
+            <div class="big-card-text">
+                <mat-card-title>
+                    {{movie.title}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <div class="genreList"
+                        *ngFor="let genre of movie.genres; let i = index; let first=first; let last=last">
+                        {{genre.name}}
+                        <span *ngIf="!last"> /&nbsp;</span>
+                    </div>
+                </mat-card-subtitle>
+                <p class="movie-overview">{{ movie.overview }}</p>
+                <p>Available: Soon</p>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" [routerLink]="['/detailview/movie-detail', movie.id]">More
+                        Information</button>
+                </mat-card-actions>
+            </div>
+        </mat-card>
+    </div>
+</div>

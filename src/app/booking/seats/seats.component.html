@@ -1,0 +1,42 @@
+<div class="seats-container">
+    <div class="cinema-overview-container">
+        <div class="title-time">
+            <h3>{{movieTitle}}</h3>
+            <small>{{day}} - {{time}}</small>
+        </div>
+
+        <div class="showcase-container">
+            <ul class="showcase">
+                <li>
+                    <div class="seat"></div>
+                    <small>N/A</small>
+                </li>
+                <li>
+                    <div class="seat selected"></div>
+                    <small>Selected</small>
+                </li>
+                <li>
+                    <div class="seat occupied"></div>
+                    <small>Occupied</small>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cinema-container">
+            <div class="screen-container">
+                <div class="screen"></div>
+            </div>
+
+            <div class="cinema-seats-container">
+                <div *ngFor="let seat of seats">
+                    <div class="seat" (click)="toggleClass($event, 'selected', seat.id)"
+                        [class.occupied]="seat.occupied">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>You have selected <span>{{seatCount}}</span> seats for a price of $<span>{{seatCount*12}}</span></p>
+    </div>
+</div>
+
+<!-- <button (click)="onNewMovie()">New Movie</button> -->

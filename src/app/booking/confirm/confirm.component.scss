@@ -1,0 +1,24 @@
+.confirm-container{
+    & h3{
+        text-align: center;
+    }
+}
+
+.info-container{
+    display: flex;
+    justify-content: center;
+}
+
+.personal-info{
+    margin-left: 25px;
+}
+
+@media(max-width: 400px){
+    .info-container{
+        flex-direction: column;
+    }
+
+    .personal-info{
+        margin-left: 0;
+    }
+}

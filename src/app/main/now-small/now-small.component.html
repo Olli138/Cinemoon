@@ -1,0 +1,26 @@
+<div class="small-container">
+    <h1>Now Showing</h1>
+    <div class="small-card-container">
+        <mat-card
+            class="small-card mat-elevation-z0 "
+            *ngFor="let movie of nowShowingMovies"
+            [routerLink]="['/detailview/movie-detail', movie.id]">
+            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="Poster"
+                class="small-card-img">
+            <div>
+                <mat-card-title>
+                    {{movie.title}}
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="genreList"
+                        *ngFor="let genre of movie.genres; let i = index; let first=first; let last=last">
+                        {{genre.name}}
+                        <span *ngIf="!last"> /&nbsp;</span>
+                    </div>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+    <button mat-raised-button color="primary" routerLink="/detailview/now-soon/now">See More</button>
+</div>
+<mat-divider></mat-divider>

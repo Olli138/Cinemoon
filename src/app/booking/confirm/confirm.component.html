@@ -1,0 +1,25 @@
+<div class="confirm-container" *ngIf="bookingData && personalData">
+    <h3>Summary</h3>
+    <div class="info-container">
+        <div class="booking-info">
+            <p><b>Movie:</b> {{bookingData.title}}</p>
+            <p><b>Date:</b> {{bookingData.date}}</p>
+            <p><b>Time:</b> {{bookingData.time}}</p>
+            <p><b>Seat-Number:</b> {{bookingData.seats.length}}</p>
+            <p><b>Seat: </b>
+                <span *ngFor="let seat of bookingData.seats; let isLast = last">
+                    {{seat}}
+                    <span *ngIf="!isLast">,&nbsp;</span>
+                </span>
+            </p>
+            <p><b>Total ($):</b> {{bookingData.total}}</p>
+        </div>
+        <div class="personal-info">
+            <p><b>Firstname:</b> {{personalData.firstname}}</p>
+            <p><b>Lastname:</b> {{personalData.lastname}}</p>
+            <p><b>Email:</b> {{personalData.email}}</p>
+            <p><b>Payment:</b> {{personalData.payment}}</p>
+            <p *ngIf="personalData.payment === 'Creditcard'"><b>Creditcard:</b> {{personalData.creditcard}}</p>
+        </div>
+    </div>
+</div>

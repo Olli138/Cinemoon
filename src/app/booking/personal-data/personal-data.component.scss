@@ -1,0 +1,47 @@
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+mat-radio-button{
+    margin-right: 10px;
+}
+
+mat-radio-group{
+    margin-bottom: 15px;
+}
+
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+
+    button{
+        margin-bottom: 10px;
+    }
+}
+
+a{
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.previous-next-button-container{
+    display: flex;   
+    justify-content: center;
+    margin: 10px;
+    
+    button{
+        margin: 10px;
+    }
+}
+
+small{
+    color: red;
+}

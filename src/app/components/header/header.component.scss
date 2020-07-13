@@ -1,0 +1,40 @@
+@import '../../../colors';
+
+.navbar{
+    justify-content: space-between;
+    background-color: $color-bg;
+    position: absolute;
+    z-index: 1;
+    font-size: 1.4rem;
+    position: relative;
+    width: 100%;
+}
+
+.cinemoon{
+    color: white;
+    text-decoration: none;
+}
+
+a{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.icon-menu{
+    display: none;
+}
+
+::ng-deep .mat-menu-panel {
+  background-color: $color-bg;
+}
+
+@media (max-width: 700px){
+    .icon-menu{
+        display: block;
+    }
+
+    .big-menu{
+        display: none;
+    }
+}
+
